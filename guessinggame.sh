@@ -2,10 +2,10 @@
 # File: guessinggame.sh
 
 direc=$(pwd)
-dircount=($(ls -larth $direc | wc -l))
+dircount=($(ls -l $direc | wc -l))
 dirguess=0
 
-function checkguess {
+function check {
     # Usage of an if statement
     if [[ $1 -lt $2 ]]
     then
@@ -23,7 +23,7 @@ echo "Guess the number of files in the current directory!"
 # Collecting user response
 read dirguess
 
-$(checkguess $dirguess $dircount)
+$(check $dirguess $dircount)
 
 done
-echo "You got it right!  Congrats!"
+echo "It is correct!  Congrats!"

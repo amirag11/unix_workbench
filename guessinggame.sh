@@ -3,6 +3,7 @@
 
 direc=$(pwd)
 dircount=($(ls -l $direc | wc -l))
+dircount=$((dircount-1))
 dirguess=0
 
 function check {
